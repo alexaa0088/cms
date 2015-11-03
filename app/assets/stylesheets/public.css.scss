@@ -9,6 +9,13 @@ dark brown:   #332318
 light brown:  #4C2516
 */
 
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+
 html { 
     height: 100%; 
     width: 100%; 
@@ -20,12 +27,12 @@ body {
     height: 100%; 
     margin: 0; 
     padding: 0;   
-    font: 14px Verdana,Lucida,Arial,Helvetica,sans-serif; 
+    font: 14px 'Oswald', sans-serif; 
     color: #332318; 
 }
 
 p, td, ul, ol, li, dl, dt, dd { 
-    font-family: Verdana,Lucida,Arial,Helvetica,sans-serif; 
+    font-family: 'Oswald', sans-serif; 
 }
 
 img { 
@@ -56,18 +63,50 @@ a:hover {}
     text-align: center; 
 }
 
+/* Header */
+
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #ddd;
+ 
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+ 
+  font-size: 17px;
+  padding: 15px;
+}
+
+/* Menu */
+
+.header .menu {
+  float: right;
+  list-style: none;
+  margin-top: 5px;
+}
+
+.menu > li {
+  display: inline;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu a {
+  color: #898989;
+}
+
+
 /* Structure */
+
 #header { 
     height: 4em; 
     padding-top: 1em; 
-    text-align: center;   
+    text-align: center;
     background: #993120; 
     color: #FFFFFF; 
 }
 
-#header h1 { 
-    margin: 0; 
-    padding: 0; 
+#header h1 {
+    margin: 0; padding: 0; 
 }
 
 #main { 
