@@ -5,6 +5,7 @@ class PublicController < ApplicationController
   before_action :setup_navigation
 
   def index
+    @subjects = Subject.all
     # intro text
   end
 
