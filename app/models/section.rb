@@ -4,6 +4,8 @@ class Section < ActiveRecord::Base
     has_many :section_edits
     has_many :editors, :through => :section_edits, :class_name => "AdminUser"
     
+    has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  
     acts_as_list :scope => :page
     
     after_save :touch_page
@@ -11,6 +13,7 @@ class Section < ActiveRecord::Base
     
     CONTENT_TYPES = ['text', 'HTML']
 
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
     validates_presence_of :name
     validates_length_of :name, :maximum => 255
     validates_inclusion_of :content_type, :in => CONTENT_TYPES,

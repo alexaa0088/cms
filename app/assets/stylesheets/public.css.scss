@@ -63,20 +63,7 @@ a:hover {}
     text-align: center; 
 }
 
-/* Header */
-
-.header {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #ddd;
- 
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
- 
-  font-size: 17px;
-  padding: 15px;
-}
-
-/* Menu */
+/* Menu - New CSS */
 
 .header .menu {
   float: right;
@@ -94,8 +81,20 @@ a:hover {}
   color: #898989;
 }
 
+/* Header - New CSS */
 
-/* Structure */
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #ddd;
+ 
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+ 
+  font-size: 17px;
+  padding: 15px;
+}
+
+/* Structure - Original CSS*/
 
 #header { 
     height: 4em; 

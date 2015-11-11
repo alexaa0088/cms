@@ -4,12 +4,12 @@
 
 <% @page.sections.visible.sorted.each do |section| %>
   <div class="section">
+    <h3><%= section.name %></h3>
+    <%= image_tag section.avatar.url(:medium) %>
     <% case section.content_type %>
     <% when 'HTML' %>
-      <h3><%= section.name %></h3>
       <p><%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'p'])) %></p>
     <% when 'text' %>
-      <h3><%= section.name %></h3>
       <p><%= section.content %></p>
     <% end %>
   </div>

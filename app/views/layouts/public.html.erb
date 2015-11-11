@@ -25,15 +25,20 @@
     </div>
 
     
-    <div id="main">
-      <div id="navigation">
-        <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
-      </div>
-      <div id="content">
-        <%= yield %>
-      </div>
-      <div class="clear"></div>
-    </div>
+    <div class="container">
+       <div class="row", id=main>
+        <div class="col-md-2">
+          <div id="navigation">
+            <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
+          </div>
+        </div><!-- col-md-2 -->
+        
+          <div class="col-md-10" id="content">
+            <%= yield %>
+          </div>
+          <div class="clear"></div>
+        </div><!-- row -->
+    </div><!-- container -->
     
     <div id="footer">
       <p id="copyright">&copy;CMS</p>
