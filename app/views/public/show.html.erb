@@ -6,8 +6,10 @@
   <div class="section">
     <% case section.content_type %>
     <% when 'HTML' %>
-      <%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a'])) %>
+      <h3><%= section.name %></h3>
+      <p><%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'p'])) %></p>
     <% when 'text' %>
+      <h3><%= section.name %></h3>
       <p><%= section.content %></p>
     <% end %>
   </div>

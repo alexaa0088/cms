@@ -5,7 +5,7 @@ class PublicController < ApplicationController
   before_action :setup_navigation
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all 
     # intro text
   end
 
@@ -21,6 +21,7 @@ class PublicController < ApplicationController
   private
 
     def setup_navigation
+      @subjects = Subject.visible.sorted
       @pages = Page.visible.sorted
     end
   

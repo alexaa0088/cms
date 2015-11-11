@@ -2,21 +2,24 @@
 <html>
   <head>
     <title>Lives Magazine<%= " | #{@page_title}" if @page_title %></title>
-    <%= stylesheet_link_tag('application', :media => 'all') %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true  %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
+      <%= csrf_meta_tags %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="header">
       <div class="container">
-        <%= link_to root_path, class: 'logo-icon' do %>
-          <i class="fa fa-newspaper-o"></i>       
-        <% end %>
-        
+
         <ul class="menu">
-          <% @subjects.each do |subject| %>
-          <li><%= link_to subject.name, "#" %></li>
-          <% end %>
-          <li><%= link_to 'Contact', "#" %></li>
-          <li><%= link_to 'About Us', "#" %></li>
+          <li>
+            <%= link_to root_path, class: 'logo-icon' do %>
+              <h1><i class="fa fa-newspaper-o"></i> Lives Magazine</h1>       
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "Admin Login", :controller => 'access', :action => 'index' %>
+          </li>
         </ul>
       </div>
     </div>
@@ -34,7 +37,6 @@
     
     <div id="footer">
       <p id="copyright">&copy;CMS</p>
-      <p><%= link_to "Admin Login", "access/index" %></p>
     </div> 
     
   </body>
