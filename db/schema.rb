@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111170457) do
+ActiveRecord::Schema.define(version: 20151111232647) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "first_name",      limit: 25
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20151111170457) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "featured",            default: false
   end
 
   add_index "sections", ["page_id"], name: "index_sections_on_page_id"

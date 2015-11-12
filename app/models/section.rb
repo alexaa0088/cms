@@ -23,6 +23,8 @@ class Section < ActiveRecord::Base
     
     scope :visible, lambda { where(:visible => true) }
     scope :invisible, lambda { where(:visible => false) }
+    scope :featured, lambda { where(:featured => true) }
+    scope :nonfeatured, lambda { where(:featured => false) }
     scope :sorted, lambda { order("sections.position ASC") }
     scope :newest_first, lambda { order("sections.created_at DESC")}
     

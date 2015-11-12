@@ -18,6 +18,10 @@
     <td><%= f.check_box(:visible) %></td>
   </tr>
   <tr>
+    <th><%= f.label(:featured) %></th>
+    <td><%= f.check_box(:featured) %></td>
+  </tr>
+  <tr>
     <th><%= f.label(:avatar, "Image") %></th>
     <th><%= f.file_field :avatar %></th>
   </tr>

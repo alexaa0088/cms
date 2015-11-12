@@ -14,6 +14,7 @@
       <th>Section</th>
       <th>Content Type</th>
       <th>Visible</th>
+      <th>Featured</th>
       <th>Actions</th>
     </tr>
     <% @sections.each do |section| %>
@@ -23,6 +24,7 @@
       <td><%= section.name %></td>
       <td><%= section.content_type %></td>
       <td class="center"><%= status_tag(section.visible) %></td>
+      <td class="center"><%= status_tag(section.featured) %></td>
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => section.id, :page_id => @page.id}, :class => 'action show') %>
         <%= link_to("Edit", {:action => 'edit', :id => section.id, :page_id => @page.id}, :class => 'action edit') %>

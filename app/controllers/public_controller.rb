@@ -5,9 +5,13 @@ class PublicController < ApplicationController
   before_action :setup_navigation
 
   def index
-    @subjects = Subject.all 
+  #  @subjects = Subject.all 
     # intro text
+   @sections = Section.featured.sorted
+   
+
   end
+
 
   def show
     @page = Page.where(:permalink => params[:permalink], :visible => true).first

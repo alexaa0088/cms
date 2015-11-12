@@ -23,6 +23,10 @@
       <td><%= @section.visible ? 'true' : 'false' %></td>
     </tr>
     <tr>
+      <th>Featured?</th>
+      <td><%= @section.featured ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
       <th>Image</th>
       <td><%= image_tag @section.avatar.url(:thumb) %></td>
     </tr>
