@@ -22,7 +22,7 @@
             <li><%= link_to "Manage Content", :controller => 'access', :action => 'index' %></li>
             <li> <%= link_to "Admin Logout", :controller => 'access', :action => 'logout' %></li> 
           <% else %>
-            <li><%= link_to "Contact", "#" %></li> 
+            <li><%= link_to "Contact", :controller => 'contacts', :action => 'new' %></li> 
             <li><%= link_to "Admin Login", :controller => 'access', :action => 'index' %></li> 
           <% end %> 
         </ul>  
@@ -31,7 +31,11 @@
       
       <div class="icon-menu"><i class="fa fa-bars fa-2x"></i></div>
 
-     
+      <% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
     <div class="container">
        <div class="row">
