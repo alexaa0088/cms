@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lives Magazine<%= " | #{@page_title}" if @page_title %></title>
+    <title>Live Magazine<%= " | #{@page_title}" if @page_title %></title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true  %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
       <%= csrf_meta_tags %>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="header">
-      <div class="container">
+    <!-- menu from Photosharing -->
+      <div class="header"> 
+        <%= link_to root_path, class: 'logo-icon' do %>
+          <h1><i class="fa fa-newspaper-o"></i>  Live Magazine</h1>
+        <% end %>
+      </div><!-- header --> 
+        
+      <div class="menu"> 
+        <ul> 
+          <li><%= link_to "Home", root_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Manage Content", :controller => 'access', :action => 'index' %></li>
+            <li> <%= link_to "Admin Logout", :controller => 'access', :action => 'logout' %></li> 
+          <% else %>
+            <li><%= link_to "Contact", "#" %></li> 
+            <li><%= link_to "Admin Login", :controller => 'access', :action => 'index' %></li> 
+          <% end %> 
+        </ul>  
+        <div class="icon-close"><i class="fa fa-times fa-2x"></i></div>
+      </div>    
+      
+      <div class="icon-menu"><i class="fa fa-bars fa-2x"></i></div>
 
-        <ul class="menu">
-          <li>
-            <%= link_to root_path, class: 'logo-icon' do %>
-              <h1><i class="fa fa-newspaper-o"></i> Lives Magazine</h1>       
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "Admin Login", :controller => 'access', :action => 'index' %>
-          </li>
-        </ul>
-      </div>
-    </div>
+     
 
-    
     <div class="container">
-       <div class="row", id=main>
-        <div class="col-md-2">
+       <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-2">
           <div id="navigation">
             <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
           </div>
         </div><!-- col-md-2 -->
         
-          <div class="col-md-10" id="content">
+          <div class="col-md-9 col-sm-9 col-xs-9 content public-content">
             <%= yield %>
           </div>
-          <div class="clear"></div>
         </div><!-- row -->
     </div><!-- container -->
     
     <div id="footer">
-      <p id="copyright">&copy;CMS</p>
+      <p id="copyright">&copy; Live Magazine</p>
     </div> 
     
   </body>

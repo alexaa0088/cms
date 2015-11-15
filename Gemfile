@@ -34,8 +34,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'acts_as_list', '~> 0.7.2'
 
 #Use stripe paperclip for image uploads
-
 gem 'paperclip', '~> 4.3.1'
+
+
+# Use figaro to hide secret keys
+gem 'figaro', '~> 1.1.1'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

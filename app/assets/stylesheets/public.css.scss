@@ -1,46 +1,33 @@
 /* Public stylesheet */
 
-/* Colors
-red:          #993120
-green:        #94B26F
-light green:  #B6D491
-yellow:       #F2DC87
-dark brown:   #332318
-light brown:  #4C2516
-*/
-
- 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 
-html { 
-    height: 100%; 
-    width: 100%; 
+
+/* Colors
+h1:         #898989
+content h2: #676767
+content h3: #b7b7b7, 7b7b7b
+content p:  #959595
+menu li:    # 2c2c2c
+notice-bckgrnd:     rgba(175,253,79,0.4);
+notice-color: #4C2516
+
+*/
+
+
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+  width: 100%;
 }
 
-body { 
-    width: 100%; 
-    min-width: 980px; 
-    height: 100%; 
-    margin: 0; 
-    padding: 0;   
-    font: 14px 'Oswald', sans-serif; 
-    color: #332318; 
-}
-
-p, td, ul, ol, li, dl, dt, dd { 
-    font-family: 'Oswald', sans-serif; 
-}
-
-img { 
-    border: none; 
-}
-
-table { 
-    border-collapse: collapse; 
+body {
+  font-family: 'Oswald', sans-serif;
 }
 
 table tr th, table tr td { 
@@ -49,88 +36,82 @@ table tr th, table tr td {
     padding: 3px; 
 }
 
-a, a:visited { 
-    color: #993120; 
-}
+.container {
+    background: transparent url('https://dl.dropboxusercontent.com/u/6407774/feature-gradient-transparent%20-%20Reverse.png') center center no-repeat;
+    background-size: cover; 
+    width: 100%;
+    min-height: 500px;
+} 
 
-a:hover {}
-
-.clear { 
-    clear: both; 
-}
-
-.center { 
-    text-align: center; 
-}
-
-/* Menu - New CSS */
-
-.header .menu {
-  float: right;
-  list-style: none;
-  margin-top: 5px;
-}
-
-.menu > li {
-  display: inline;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.menu a {
-  color: #898989;
-}
-
-/* Header - New CSS */
+/* Header */
 
 .header {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #ddd;
- 
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
- 
-  font-size: 17px;
-  padding: 15px;
-}
-
-/* Structure - Original CSS*/
-
-#header { 
-    height: 4em; 
-    padding-top: 1em; 
+    width: 100%;
+    background-color: rgba(137,137,137,0.05);
+    border-bottom: 1px solid #ddd;
+    letter-spacing: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
     text-align: center;
-    background: #993120; 
-    color: #FFFFFF; 
+    font-size: 17px;
+    padding: 15px;
 }
 
-#header h1 {
-    margin: 0; padding: 0; 
+.header a, .header a:visited, .header a:hover {
+    color: #898989;
+    text-decoration: none;
 }
 
-#main { 
-    min-height: 500px; 
-    background: #F2DC87; 
+/* Menu */
+
+.menu {
+    background-color: rgba(137,137,137,0.7);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 240px;
+    right: -240px;
+    z-index: 1;
 }
 
-#navigation { 
-    float: left; 
-    width: 180px; 
-    min-height: 480px; 
-    padding: 10px;   
-    background: #94B26F; 
-    color: #4C2516; 
+.menu ul {
+  list-style: none;
+  padding-right: 0;
 }
 
-#content { 
-    padding: 10px; 
+.menu li a,.menu li a:visited {
+  color: #2c2c2c;
+  display: block;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 30px 40px;
+  text-decoration: none;
 }
+
+.menu .icon-close {
+    color: #2c2c2c;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.icon-menu {
+    color: #898989;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+/* Footer */
+
 #footer { 
-    clear: both; 
     height: 2.5em; 
     text-align: right;  
-    background: #4C2516; 
-    color: #F2DC87; 
+    background-color: rgba(137,137,137,0.05);
+    border-top: 1px solid #ddd;
+    color: #2c2c2c; 
 }
 
 #footer p { 
@@ -139,30 +120,68 @@ a:hover {}
 }
 
 /* Navigation */
+
+#navigation { 
+    padding: 30px;   
+    color: #4C2516; 
+}
 #navigation ul { 
     list-style: none; 
     margin: 0; 
-    padding: 0; 
+    padding: 5px;
+    font-size: 20px;
 }
 
 #navigation ul li { 
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
 }
 #navigation ul ul { 
     margin: 0.5em 0 0 1em; 
-    font-size: 0.9em; 
+    font-size: 16px;
 }
 
 #navigation a { 
     text-decoration: none; 
-    padding: 1px 3px;
+    color: #676767;
 }
 
 #navigation a:hover { 
-    background: #F2DC87; 
+
+   color: #dddddd;
 }
 
-/* Content */
-#content h2 { 
-    color: #4C2516; 
+
+/* Section */
+
+img {
+    width: 100%;
 }
+
+.public-content {
+    border-left: 1px solid #ddd;
+}
+
+.content {
+    margin: 20px 30px;
+    padding-left: 60px;
+}
+
+.content h2 {
+    color: #676767;  
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.content h3 {
+    color: #7b7b7b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+}
+
+.content p {
+    color: #959595;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15em;
+    line-height: 1.75em;
+}
+

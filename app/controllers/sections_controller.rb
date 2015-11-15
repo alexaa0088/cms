@@ -22,7 +22,7 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(section_params)
     if @section.save
-      flash[:notice] = "Section created successfully."
+      flash[:notice] = "Article created successfully"
       redirect_to(:action => 'index', :page_id => @page.id)
     else
       @pages = @page.subject.pages.sorted
@@ -40,7 +40,7 @@ class SectionsController < ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
-      flash[:notice] = "Section updated successfully."
+      flash[:notice] = "Article updated successfully"
       redirect_to(:action => 'show', :id => @section.id, :page_id => @page.id)
     else
       @pages = @page.subject.pages.sorted
@@ -55,7 +55,7 @@ class SectionsController < ApplicationController
 
   def destroy
     section = Section.find(params[:id]).destroy
-    flash[:notice] = "Section destroyed successfully."
+    flash[:notice] = "Article deleted successfully"
     redirect_to(:action => 'index', :page_id => @page.id)
   end
 

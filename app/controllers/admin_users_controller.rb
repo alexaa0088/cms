@@ -16,7 +16,7 @@ class AdminUsersController < ApplicationController
   def create
     @admin_user = AdminUser.new(admin_user_params)
     if @admin_user.save
-      flash[:notice] = "Admin User created successfully."
+      flash[:notice] = "Admin User created successfully"
       redirect_to(:action => 'index')
     else
       render('new')
@@ -30,7 +30,7 @@ class AdminUsersController < ApplicationController
   def update
     @admin_user = AdminUser.find(params[:id])
     if @admin_user.update_attributes(admin_user_params)
-      flash[:notice] = "Admin user updated successfully."
+      flash[:notice] = "Admin user updated successfully"
       redirect_to(:action => "index")
     else
       render("edit")
@@ -43,7 +43,7 @@ class AdminUsersController < ApplicationController
   
   def destroy
     AdminUser.find(params[:id]).destroy
-    flash[:notice] = "Admin user destroyed successfully."
+    flash[:notice] = "Admin user deleted successfully"
     redirect_to(:action => "index")
   end
   

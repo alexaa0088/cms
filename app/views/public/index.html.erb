@@ -1,12 +1,13 @@
-<h1>Featured Articles</h1>
+<h2>Featured Articles</h2>
+
 <% @sections.featured.each do |section| %>
- <h3><%= section.name %></h3>
- <%= image_tag section.avatar.url(:medium) %>
-   <% case section.content_type %>
-    <% when 'HTML' %>
-      <p><%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'p'])) %></p>
-    <% when 'text' %>
-      <p><%= section.content %></p>
+    <h3><%= section.name %></h3>
+    <div class="img-responsive"><%= image_tag section.avatar.url %></div>
+    <% case section.content_type %>
+        <% when 'HTML' %>
+          <p><%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'p'])) %></p>
+        <% when 'text' %>
+          <p><%= section.content %></p>
     <% end %>
-     
 <% end %>
+

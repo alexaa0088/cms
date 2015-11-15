@@ -2,131 +2,124 @@
 /* load after public.css */
 
 /* Structure */
-#content {
-    padding-left: 100px; 
-    padding-right: 100px; 
+
+.login form {  
+    margin-top: 150px;
+} 
+
+input { 
+    width: 100%;
+    height: 35px;
+    text-indent: 10px;
 }
 
-#content h2 { 
-    width: 100%; 
-    text-align: center; 
+input:focus {  
+  outline: none !important;
 }
 
-.login form {
-    margin: 100px 250px; 
+input[type=submit] {
+    margin-top: 20px;
 }
 
-.menu .identity { 
-    text-align: center; 
+.admin-menu h2,  
+.subjects h2,
+.pages h2,
+.sections h2,
+.user h2 {          
+    text-align: center;
+    padding: 20px 0 10px;
 }
 
-.menu ul { 
-    margin: 3em 250px; 
+.admin-menu .identity {   
+    text-align: center;
+    padding-top: 10px;
+}
+
+.admin-menu ul {  
+    margin: 3em 0; 
     list-style: none; 
 }
 
-.menu ul li {
+.admin-menu ul li, .back-link { 
     margin-bottom: 1em; 
+    margin-right: 1.5em;
+    font-size: 16px;
 }
 
-a { 
+.admin-menu ul li a, a.back-link { 
     text-decoration: none; 
+    color: #676767;
 }
 
-a:hover { 
-    text-decoration: underline; 
+.admin-menu ul li a:hover, a.back-link:hover { 
+    color: #dddddd;
+    text-decoration: none;
 }
 
 /* large action buttons */
+.new {
+    margin: 20px 0 30px;
+} 
+
 a.action { 
-    float: right; 
     padding: 2px 5px; 
     margin: 0 0 1em 1em;  
-    background: #94B26F; 
+    background: rgba(175,253,79,0.4);
     color: #4C2516;  
     border: 1px solid #4C2516;  
     text-decoration: none; 
-    font-size: 0.8em; 
+    font-size: 1em; 
     text-align: center; 
 }
 
 a.action:hover { 
-    background: #B6D491; 
+    background: rgba(175,253,79,0.2); 
+    text-decoration: none;
+    color: #dddddd
 }
 
 /* small action buttons */
 .actions { 
-    width: 240px; 
-}
+    width: 250px; 
+} 
+
 .actions a.action { 
     float: left; 
     min-width: 3.5em;  
     padding: 1px 2px; 
     margin: 2px 5px; 
-    font-size: 0.7em; 
+    font-size: 0.8em; 
 }
 
-/* CRUD */
+
 .notice { 
-    height: 1.25em; 
-    padding: 0.5em; 
+    height: 35px;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
     text-align: center;  
-    background: #B6D491; 
+    background: rgba(175,253,79,0.4); 
     color: #4C2516; 
 }
 
-.back-link { 
-    font-size: 0.8em; 
-    margin-bottom: 1em; 
-}
 
 .form-buttons { 
     text-align: center; 
     margin: 1em 0; 
 }
 
-.index table { 
-    clear: both; 
-    width: 100%; 
+input[type=checkbox],
+input[type=radio] { 
+    width: 15px;
 }
 
-.index table tr td { 
-    border: 1px solid #666666; 
-}
-
-.show table { 
-    clear: both; 
-    margin: 0 200px; 
-    width: 300px; 
-}
-
-.show table.wide { 
-    width: 600px; 
-    margin: 0 50px; 
-}
-
-.show table tr th { 
-    white-space: nowrap; 
-    padding-right: 5px;
-}
-
-.show table tr td { 
-    border: 1px solid #666666; 
-}
-
-.edit table, .new table { 
-    margin: 0 auto; 
-}
-
-.section + .section { 
-    padding-top: 0.5em; 
-    margin-top: 0.5em;  
-    border-top: 1px dotted #666666; 
+.input-text {
+    margin-right: 10px;
 }
 
 /* zebra striping for table rows */
 .odd { 
-    background: #E5CE69; 
+    background: rgba(240,255,78, 0.6); 
 }
 
 .even { 
@@ -165,7 +158,7 @@ span.status.false {
 }
 
 #errorExplanation { 
-    width: 400px; 
+    width: 100%;
     padding: 0; 
     margin: 0 auto 1.5em;  
     border: 1px solid #AA0000; 
@@ -178,7 +171,7 @@ span.status.false {
     font-size: 12px;
     padding: 5px 5px 5px 15px; 
     margin: 0; 
-    width: 380px;  
+    width: 100%;
     background-color: #AA0000; 
     color: #FFFFFF; 
 }

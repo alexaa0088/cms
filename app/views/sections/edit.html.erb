@@ -1,18 +1,20 @@
-<% @page_title = "Edit Section" %>
+<% @page_title = "Edit Article" %>
 
 <%= link_to("<< Back to List", {:action => 'index', :page_id => @page.id}, :class => 'back-link') %>
 
-<div class="sections edit">
-  <h2>Update Section</h2>
-
-  <%= form_for(:section, :url => {:action => 'update', :id => @section.id, :page_id => @page.id}, html: { multipart: true }) do |f| %>
-
-    <%= render(:partial => "form", :locals => {:f => f}) %>
-
-    <div class="form-buttons">
-      <%= submit_tag("Update Section") %>
-    </div>
-
-  <% end %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 sections edit">
+    <h2>Update Article</h2>
+  
+    <%= form_for(:section, :url => {:action => 'update', :id => @section.id, :page_id => @page.id}, html: { multipart: true }) do |f| %>
+  
+      <%= render(:partial => "form", :locals => {:f => f}) %>
+  
+      <div class="form-buttons">
+        <%= submit_tag("Update Article") %>
+      </div>
+  
+    <% end %>
+  </div>
 </div>
 
