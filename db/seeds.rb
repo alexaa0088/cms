@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 admin = AdminUser.create(first_name: 'Admin', last_name: 'User', email: 'adminuser@email.com', username: 'adminuser', password_digest: 'password')
+
+lifestyle = Subject.create(name: "Lifestyle", position: 1, visible: true)
